@@ -57,7 +57,7 @@
   #s-quiz .glow.g1{top:-70px;right:-90px}
   #s-quiz .glow.g2{bottom:-60px;left:-80px}
   #s-quiz .wash{position:fixed;inset:0;z-index:0;pointer-events:none;transition:background-color .5s ease}
-  .quiz-inner{position:relative;z-index:1;display:flex;flex-direction:column;min-height:100vh;max-width:480px;margin:0 auto;
+  .quiz-inner{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:100vh;max-width:480px;margin:0 auto;
     padding:max(22px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom))}
   .qtop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:24px}
   .qbrand{display:flex;align-items:center;gap:9px}
@@ -111,22 +111,8 @@
   .rec{font-size:13.5px;color:#3C5AB9;margin:0;line-height:1.5}
   #s-result .btn{margin-top:18px}
 
-  @media (min-width:900px){
-    .start-inner,.quiz-inner{max-width:min(1100px,88vw)}
-    #s-result{max-width:min(1100px,88vw)}
-    h1{font-size:clamp(46px,4.4vw,64px)}
-    .lede{font-size:clamp(19px,1.6vw,26px)}
-    .btn{font-size:clamp(20px,1.7vw,26px);padding:22px 30px}
-    .qtext{font-size:clamp(28px,2.6vw,42px)}
-    .opts{gap:18px}
-    .opt{font-size:clamp(18px,1.5vw,24px);min-height:120px;border-radius:26px}
-    .card{padding:clamp(26px,2.6vw,42px)}
-    .ring{width:clamp(190px,18vw,240px);height:clamp(190px,18vw,240px)}
-    .ring .pct b{font-size:clamp(46px,4.4vw,64px)}
-  }
-
   .zone-photo{position:relative; width:calc(100% + 36px); margin:26px -18px 0; z-index:1; pointer-events:none;
-    flex:1; min-height:clamp(280px,42vh,460px); overflow:hidden;
+    flex:none; height:clamp(280px,42vh,460px); overflow:hidden;
     background-size:cover; background-position:center 10%;
     filter:grayscale(.05) brightness(1) contrast(1.05);
     -webkit-mask-image:radial-gradient(ellipse 56% 60% at 50% 38%, black 32%, rgba(0,0,0,.7) 52%, rgba(0,0,0,.25) 72%, transparent 92%);
@@ -137,6 +123,23 @@
     background:var(--zw,rgba(30,27,75,.9)); mix-blend-mode:multiply; opacity:.3}
   .zone-photo::after{content:"";position:absolute;inset:0;
     background:linear-gradient(180deg, var(--zw,rgba(30,27,75,.85)) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 74%, var(--zw,rgba(30,27,75,.6)) 100%)}
+
+  @media (min-width:900px){
+    .start-inner,.quiz-inner{max-width:min(1100px,88vw)}
+    #s-result{max-width:min(1100px,88vw)}
+    .quiz-inner{justify-content:center}
+    h1{font-size:clamp(46px,4.4vw,64px)}
+    .lede{font-size:clamp(19px,1.6vw,26px)}
+    .btn{font-size:clamp(20px,1.7vw,26px);padding:22px 30px}
+    .qtext{font-size:clamp(28px,2.6vw,42px)}
+    .opts{gap:18px}
+    .opt{font-size:clamp(18px,1.5vw,24px);min-height:120px;border-radius:26px}
+    .card{padding:clamp(26px,2.6vw,42px)}
+    .ring{width:clamp(190px,18vw,240px);height:clamp(190px,18vw,240px)}
+    .ring .pct b{font-size:clamp(46px,4.4vw,64px)}
+    .zone-photo{flex:none; width:100%; height:clamp(340px,38vh,560px); margin:32px 0 0}
+    .backrow{margin-top:32px}
+  }
 
   .figma-logo-blue{width:150px; height:auto; color:#0236DA}
   .figma-logo-white{width:130px; height:auto; color:#fff}
